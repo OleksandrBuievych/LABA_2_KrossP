@@ -5,7 +5,7 @@ public class Main {
         System.out.println("Введіть номер завдання:");
         int task = scanner.nextInt();
         switch (task) {    //Вибираємо завдання
-            case 1: {
+                case 1: {
                 double F; // створюємо змінну необхідну для завдання
                 System.out.println("Введіть значення змінної а:");
                 double a = scanner.nextDouble();
@@ -20,7 +20,7 @@ public class Main {
                 else F = 3 * x + (2 / c);
                 System.out.println(F);
                 break;
-            }
+           }
 
             case 2: {
                 System.out.print("Введіть номер операції (1-додавання, 2-віднімання, 3-множення, 4-ділення): ");
@@ -51,13 +51,16 @@ public class Main {
                         if (B > 0) {     // При В<0 ділення не буде відбуватися
                             result = A / B;
                             System.out.println("Результат: " + result);
-                        } else System.out.println("Число В не повинно дорівнювати 0!!!");
+                        } else {
+                            System.out.println("Число В не повинно дорівнювати 0!!!");
+                            break;
+                        }
                         break;
-                    default:
+                    default:{
                         System.out.println("Неправильний номер операції!");
-                        return;
-                }
-            }
+                        return;}
+                }}
+                break;
             case 3: {
                 System.out.println("Введіть розмір зарплати співробітника: ");
                 double zarplata = scanner.nextDouble();// вводимо з\п працівника
@@ -84,6 +87,7 @@ public class Main {
                     i++;
                 }
                 System.out.println("Кількість рівних елементів на початку послідовності: " + count);
+                break;
             }
             case 5: {
                 System.out.println("Варіант завдання А");
@@ -125,7 +129,7 @@ public class Main {
 
             default:{
                 System.out.println("Номер завдання введено невірно, будь-ласка, вводьте номер від 1 до 5");
-                break;
+                return;
             }
         }
         }
